@@ -1,0 +1,25 @@
+letoken est une chaîne=authentification(mailcompte,mdp_compte)
+
+maReq est une httpRequête
+maReq.URL="https://eu1.getyooz.com/yooz/v2/api/users"
+maReq.Entête["applicationId"]="#TON APPLICATION ID#"
+maReq.Entête["Authorization"] = "Bearer " + letoken
+
+maReponse est un httpRéponse=maReq.Envoie()
+SI maReponse.CodeEtat="200" ALORS
+	r est un JSON=maReponse.Contenu
+	j est un tableau de Schema_User.STResult
+	POUR i=1 À r..Occurrence
+		j.Ajoute(r[i])
+	FIN
+	nbenr est un entier=j..Occurrence
+	
+	POUR i=1 À nbenr
+		Trace("____")
+		Trace(j[i]:data:dataBlocks:YZ_USER_COMMONS:YZ_USERNAME:value,">",j[i]:data:dataBlocks:YZ_USER_COMMONS:YZ_FIRST_NAME:value,j[i]:data:dataBlocks:YZ_USER_COMMONS:YZ_LAST_NAME:value)		
+		Trace(j[i]:data:dataBlocks:YZ_ACTIVITY_PERIOD:YZ_ACTIVATION_DATE:value,j[i]:data:dataBlocks:YZ_ACTIVITY_PERIOD:YZ_INACTIVATION_DATE:value)
+	FIN
+	RENVOYER j
+SINON
+	RENVOYER ("Erreur > "+maReponse.CodeEtat)
+FIN

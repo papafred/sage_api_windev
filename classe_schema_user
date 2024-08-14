@@ -1,0 +1,162 @@
+// Creation d'une classe pour stocker le schéma
+
+//crééer avec https://formation.pcscloud.net/wjson_web/FR/
+STYZ_USERNAME est une Structure
+	value est une chaîne
+FIN
+
+STYZ_FIRST_NAME est une Structure
+	value est une chaîne
+FIN
+
+STYZ_LAST_NAME est une Structure
+	value est une chaîne
+FIN
+
+STYZ_EMAIL est une Structure
+	value est une chaîne
+FIN
+
+STYZ_CONFIDENTIALITY_LEVEL est une Structure
+	value est une chaîne
+FIN
+
+STvalue est une Structure
+	value est une chaîne
+FIN
+
+STYZ_SFTP_LOGIN est une Structure
+	value est une chaîne
+FIN
+
+STYZ_HAS_SFTP_ACCESS est une Structure
+	value est un booléen
+FIN
+
+STYZ_OPERATIONAL est une Structure
+	value est un booléen
+FIN
+
+STYZ_GENERIC_FORM_PREVIEW1 est une Structure
+	value est un tableau de chaînes
+FIN
+
+STYZ_USERS_CUSTOM_1 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_2 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_3 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_4 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_5 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_6 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_7 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_8 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_9 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USERS_CUSTOM_10 est une Structure
+	value est une chaîne
+FIN
+
+STYZ_DISPLAY_NAME est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USER_LANGUAGE est une Structure
+	value est une chaîne
+FIN
+
+STYZ_TIME_ZONE est une Structure
+	value est une chaîne
+FIN
+
+STYZ_ACTIVATION_DATE est une Structure
+	value est une chaîne
+FIN
+
+STYZ_INACTIVATION_DATE est une Structure
+	value est une chaîne
+FIN
+
+STYZ_USER_MANAGER est une Structure
+	value est un tableau de STvalue
+FIN
+
+STYZ_GENERIC_FORM_PREVIEW est une Structure
+	YZ_GENERIC_FORM_PREVIEW est un STYZ_GENERIC_FORM_PREVIEW1
+FIN
+
+STYZ_USERS_ADDITIONAL_DATA est une Structure
+	YZ_USERS_CUSTOM_1	est un STYZ_USERS_CUSTOM_1
+	YZ_USERS_CUSTOM_2	est un STYZ_USERS_CUSTOM_2
+	YZ_USERS_CUSTOM_3	est un STYZ_USERS_CUSTOM_3
+	YZ_USERS_CUSTOM_4	est un STYZ_USERS_CUSTOM_4
+	YZ_USERS_CUSTOM_5	est un STYZ_USERS_CUSTOM_5
+	YZ_USERS_CUSTOM_6	est un STYZ_USERS_CUSTOM_6
+	YZ_USERS_CUSTOM_7	est un STYZ_USERS_CUSTOM_7
+	YZ_USERS_CUSTOM_8	est un STYZ_USERS_CUSTOM_8
+	YZ_USERS_CUSTOM_9	est un STYZ_USERS_CUSTOM_9
+	YZ_USERS_CUSTOM_10	est un STYZ_USERS_CUSTOM_10
+FIN
+
+STYZ_MY_ACCOUNT est une Structure
+	YZ_DISPLAY_NAME		est un STYZ_DISPLAY_NAME
+	YZ_USER_LANGUAGE	est un STYZ_USER_LANGUAGE
+	YZ_TIME_ZONE		est un STYZ_TIME_ZONE
+FIN
+
+STYZ_ACTIVITY_PERIOD est une Structure
+	YZ_ACTIVATION_DATE		est un STYZ_ACTIVATION_DATE
+	YZ_INACTIVATION_DATE	est un STYZ_INACTIVATION_DATE
+FIN
+
+STYZ_USER_COMMONS est une Structure
+	YZ_USERNAME					est un STYZ_USERNAME
+	YZ_FIRST_NAME				est un STYZ_FIRST_NAME
+	YZ_LAST_NAME				est un STYZ_LAST_NAME
+	YZ_EMAIL					est un STYZ_EMAIL
+	YZ_CONFIDENTIALITY_LEVEL	est un STYZ_CONFIDENTIALITY_LEVEL
+	YZ_USER_MANAGER				est un STYZ_USER_MANAGER
+	YZ_SFTP_LOGIN				est un STYZ_SFTP_LOGIN
+	YZ_HAS_SFTP_ACCESS			est un STYZ_HAS_SFTP_ACCESS
+	YZ_OPERATIONAL				est un STYZ_OPERATIONAL
+FIN
+
+STdataBlocks est une Structure
+	YZ_USER_COMMONS				est un STYZ_USER_COMMONS
+	YZ_GENERIC_FORM_PREVIEW		est un STYZ_GENERIC_FORM_PREVIEW
+	YZ_USERS_ADDITIONAL_DATA	est un STYZ_USERS_ADDITIONAL_DATA
+	YZ_MY_ACCOUNT				est un STYZ_MY_ACCOUNT
+	YZ_ACTIVITY_PERIOD			est un STYZ_ACTIVITY_PERIOD
+FIN
+
+STdata est une Structure
+	dataBlocks est un STdataBlocks
+FIN
+
+STResult est une Structure
+	data est un STdata
+FIN

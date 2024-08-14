@@ -1,0 +1,27 @@
+// Authentification pour récuperer le token Bearer
+//url de connexion 
+// Europe et Asie
+// eu1.getyooz.com => production
+// preproduction1v2.getyooz.com => pre-production
+// staging1v2.getyooz.com => technical tests
+//
+//Amerique
+// us1.getyooz.com => production
+// usstaging1.getyooz.com => technical tests
+
+PROCÉDURE authentification(sMailConnexion est chaine,sMotdePasse est chaine)
+letoken est une chaîne
+maReq est une httpRequête
+maReq.URL="https://eu1.getyooz.com/auth/realms/yooz/protocol/openid-connect/token"  //URL de production
+maReq.ContentType="application/x-www-form-urlencoded"
+maReq.Contenu="grant_type=password&client_id=yooz-public-api&username="+sMailConnexion+"&password="+sMotdePasse
+
+maReponse est une httpRéponse=maReq.Envoie()
+SI maReponse.CodeEtat="200" ALORS
+	j est un JSON=maReponse.Contenu	
+	letoken=j.access_token
+	si enmodetest() alors Trace(letoken)
+  RENVOYER letoken
+SINON
+	RENVOYER("Erreur de connexion > Erreur "+maReponse.CodeEtat)
+FIN
